@@ -1,0 +1,166 @@
+.container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+.searchPanel {
+    width: 400px;
+    background: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.backButton {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.backButton:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.searchPanel h2 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.searchBox {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 12px 40px 12px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #0066ff;
+}
+
+.clearButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ff4444;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.clearButton:hover {
+    background: #cc0000;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.sugestoes {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.sugestaoItem {
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s ease;
+}
+
+.sugestaoItem:last-child {
+    border-bottom: none;
+}
+
+.sugestaoItem:hover {
+    background: #f5f5f5;
+}
+
+.sugestaoIcon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.sugestaoNome {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.sugestaoEndereco {
+    font-size: 13px;
+    color: #666;
+}
+
+.info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.info strong {
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.mapa {
+    flex: 1;
+    height: 100%;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .searchPanel {
+        width: 100%;
+        height: auto;
+        max-height: 40vh;
+    }
+
+    .mapa {
+        height: 60vh;
+    }
+}

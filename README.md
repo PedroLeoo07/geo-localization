@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🗺️ Sistema de Geolocalização e Mapas
 
-## Getting Started
+Sistema interativo desenvolvido com Next.js para explorar recursos de geolocalização e mapeamento usando a API do Mapbox.
 
-First, run the development server:
+## ✨ Funcionalidades
+
+### 🏠 Home
+
+- Interface inicial com navegação para as páginas de funcionalidades
+- Design moderno com cards informativos
+
+### 📍 Page 1 - Geolocalização
+
+- Detecta automaticamente sua localização atual
+- Exibe um marcador vermelho no mapa
+- **Popup personalizado** com:
+  - Coordenadas precisas (latitude e longitude)
+  - Nível de precisão da localização
+  - Altitude (quando disponível)
+  - Data e hora da detecção
+- Painel lateral com informações detalhadas
+
+### 🚗 Page 2 - Traçar Rotas
+
+- Busca inteligente de endereços e locais
+- Sugestões em tempo real enquanto você digita
+- Traçado automático de rotas otimizadas
+- Exibição de:
+  - Distância total da rota
+  - Tempo estimado de viagem
+  - Trajeto visualizado no mapa
+- Marcadores de origem (azul) e destino (vermelho)
+
+## 🚀 Instalação
+
+### 1. Clone o repositório
+
+```bash
+git clone <url-do-repositorio>
+cd geo-localization
+```
+
+### 2. Instale as dependências
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+### 3. Configure o token do Mapbox
+
+1. Acesse [mapbox.com](https://www.mapbox.com/) e crie uma conta gratuita
+2. Vá para [https://account.mapbox.com/access-tokens/](https://account.mapbox.com/access-tokens/)
+3. Copie seu token de acesso
+4. Crie um arquivo `.env.local` na raiz do projeto:
+
+```bash
+NEXT_PUBLIC_MAPBOX_TOKEN=seu_token_aqui
+```
+
+### 4. Execute o servidor de desenvolvimento
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 15** - Framework React
+- **React 19** - Biblioteca JavaScript
+- **Mapbox GL JS** - API de mapas interativos
+- **Mapbox Geocoding API** - Busca de endereços
+- **Mapbox Directions API** - Cálculo de rotas
+- **CSS Modules** - Estilização
 
-## Learn More
+## 📱 Funcionalidades Detalhadas
 
-To learn more about Next.js, take a look at the following resources:
+### Geolocalização API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O projeto utiliza a API de Geolocalização do navegador para obter a posição atual do usuário:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Precisão em metros
+- Coordenadas (latitude/longitude)
+- Altitude (quando disponível)
+- Timestamp da detecção
 
-## Deploy on Vercel
+### Sistema de Rotas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Busca com autocompletar
+- Múltiplas sugestões de endereços
+- Cálculo de rota otimizado
+- Visualização do trajeto no mapa
+- Informações de distância e tempo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔒 Permissões Necessárias
+
+O aplicativo precisa de permissão para acessar sua localização. Certifique-se de permitir quando o navegador solicitar.
+
+## 📝 Estrutura do Projeto
+
+```text
+src/
+  app/
+    ├── page.jsx              # Home
+    ├── page.module.css       # Estilos da home
+    ├── page1/
+    │   ├── page.jsx          # Geolocalização
+    │   └── page1.module.css  # Estilos
+    └── page2/
+        ├── page.jsx          # Traçar Rotas
+        └── page2.module.css  # Estilos
+```
+
+## 🤝 Contribuindo
+
+Sinta-se à vontade para contribuir com melhorias!
+
+## 📄 Licença
+
+Este projeto é de código aberto e está disponível sob a licença MIT.
